@@ -48,7 +48,9 @@ pnpm dev
 ```
 
 The demo app lives in `demo/app` and uses the Next.js App Router. It is configured for static
-export and can be deployed to GitHub Pages through `.github/workflows/pages.yml`.
+export and can be deployed to GitHub Pages through `.github/workflows/pages.yml`. Enable Pages in
+the repository settings with GitHub Actions as the source, or provide a `PAGES_TOKEN` secret that
+can enable Pages during the workflow.
 
 ## Manuscript
 

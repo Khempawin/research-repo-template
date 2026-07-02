@@ -19,3 +19,7 @@ derived from `GITHUB_REPOSITORY`, so project pages work at `https://OWNER.github
 
 Deployment is handled by `.github/workflows/pages.yml`. In the repository settings, set Pages to
 use GitHub Actions as the source.
+
+If the first deploy fails with `Get Pages site failed`, either enable Pages manually in the
+repository settings or add a `PAGES_TOKEN` repository secret with permission to enable Pages. The
+workflow passes that token to `actions/configure-pages` with `enablement: true`.
