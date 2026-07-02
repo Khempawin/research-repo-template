@@ -41,7 +41,9 @@ def main(
 
     settings.output.predictions_path.parent.mkdir(parents=True, exist_ok=True)
     with settings.output.predictions_path.open("w") as file:
-        for index, (label, prediction) in enumerate(zip(labels.tolist(), predictions.tolist())):
+        for index, (label, prediction) in enumerate(
+            zip(labels.tolist(), predictions.tolist(), strict=True)
+        ):
             file.write(
                 json.dumps({"id": index, "label": int(label), "prediction": int(prediction)}) + "\n"
             )

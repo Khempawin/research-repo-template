@@ -3,7 +3,7 @@ name = "research-project"
 version = "0.1.0"
 description = "Template experiment code for a computer science research project"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "numpy>=2.0.0",
     "pydantic>=2.8.0",
@@ -21,10 +21,11 @@ package = false
 
 [tool.ruff]
 line-length = 100
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 
 [tool.pytest.ini_options]
+pythonpath = ["."]
 testpaths = ["tests"]

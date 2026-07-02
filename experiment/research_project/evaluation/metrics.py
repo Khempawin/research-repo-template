@@ -11,5 +11,7 @@ def accuracy_score(labels: Sequence[int], predictions: Sequence[int]) -> float:
         msg = "labels and predictions must not be empty"
         raise ValueError(msg)
 
-    correct = sum(int(label == prediction) for label, prediction in zip(labels, predictions))
+    correct = sum(
+        int(label == prediction) for label, prediction in zip(labels, predictions, strict=True)
+    )
     return correct / len(labels)
