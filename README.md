@@ -43,11 +43,12 @@ To rename the template, update:
 
 ```bash
 cd demo
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-The demo app lives in `demo/app` and uses the Next.js App Router.
+The demo app lives in `demo/app` and uses the Next.js App Router. It is configured for static
+export and can be deployed to GitHub Pages through `.github/workflows/pages.yml`.
 
 ## Manuscript
 

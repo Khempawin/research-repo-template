@@ -2,7 +2,7 @@
 
 setup:
 	cd experiment && uv sync
-	cd demo && npm install
+	cd demo && pnpm install
 
 test:
 	cd experiment && uv run pytest
@@ -14,8 +14,8 @@ experiment:
 	cd experiment && uv run python -m research_project.experiments.run_baseline --config configs/baseline.toml
 
 demo-build:
-	cd demo && npm run build
+	cd demo && pnpm build
 
 clean:
 	find experiment -type d -name __pycache__ -prune -exec rm -rf {} +
-	rm -rf experiment/.pytest_cache experiment/.ruff_cache demo/.next
+	rm -rf experiment/.pytest_cache experiment/.ruff_cache demo/.next demo/out demo/.pnpm-store

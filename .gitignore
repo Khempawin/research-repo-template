@@ -13,6 +13,7 @@ build/
 
 # Node / Next.js
 node_modules/
+.pnpm-store/
 .next/
 out/
 .env
