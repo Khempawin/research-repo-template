@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Experiment artifacts
+experiment/artifacts/**
+!experiment/artifacts/.gitkeep
+!experiment/artifacts/results/
+!experiment/artifacts/results/.gitkeep
+
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

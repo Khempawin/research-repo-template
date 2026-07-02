@@ -1,0 +1,12 @@
+[experiment]
+name = "baseline"
+seed = 0
+
+[data]
+name = "example"
+num_examples = 128
+num_features = 8
+
+[output]
+predictions_path = "artifacts/results/baseline_predictions.jsonl"
+metrics_path = "artifacts/results/baseline_metrics.json"

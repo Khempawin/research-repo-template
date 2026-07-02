@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  experiment:
+    name: Python experiment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiment
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: experiment/.python-version
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Test
+        run: uv run pytest
+
+  demo:
+    name: Next.js demo
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build

@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+
+\input{macros}
+
+\title{Research Project Title}
+\author{Author One \and Author Two}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a concise summary of the research problem, method, empirical findings, and broader
+impact.
+\end{abstract}
+
+\input{introduction}
+\input{method}
+\input{experiments}
+\input{conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
