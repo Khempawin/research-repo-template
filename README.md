@@ -10,6 +10,7 @@ replace.
 experiment/   uv-managed Python project for experiments and analysis
 demo/         Next.js App Router project for showcasing results
 manuscript/   Overleaf-compatible LaTeX paper scaffold
+services/     optional API and worker scaffolds for dynamic research demos
 ```
 
 ## Quick Start
@@ -51,6 +52,10 @@ The demo app lives in `demo/app` and uses the Next.js App Router. It is configur
 export and can be deployed to GitHub Pages through `.github/workflows/pages.yml`. Enable Pages in
 the repository settings with GitHub Actions as the source, or provide a `PAGES_TOKEN` secret that
 can enable Pages during the workflow.
+
+For future dynamic demos, keep the GitHub Pages frontend static and point it at a separately hosted
+API with `NEXT_PUBLIC_REVIEW_API_URL`. The optional `services/` scaffold outlines a review API,
+background worker, and shared service contracts for long-running model or agentic workflows.
 
 ## Manuscript
 

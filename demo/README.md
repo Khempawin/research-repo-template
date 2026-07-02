@@ -10,7 +10,21 @@ pnpm install
 pnpm dev
 ```
 
-Edit pages in `app/`.
+Edit routes in `app/`, reusable UI in `components/`, placeholder content in `data/`, shared
+types in `interfaces/`, helpers in `lib/`, and global CSS in `styles/`.
+
+## Optional Review API
+
+The demo remains static for GitHub Pages. If a project later needs dynamic review generation, host
+an API separately and set:
+
+```bash
+NEXT_PUBLIC_REVIEW_API_URL=https://review-api.example.org
+```
+
+Use `lib/review-api.ts` from client components to create review jobs and poll for status. Keep
+model credentials and long-running workflows in `services/review-api` and `services/review-worker`,
+not in the static demo.
 
 ## GitHub Pages
 

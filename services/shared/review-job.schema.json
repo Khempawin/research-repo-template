@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/review-job.schema.json",
+  "title": "Review Job",
+  "type": "object",
+  "required": ["job_id", "status"],
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "description": "Stable identifier returned by the review API."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "running", "succeeded", "failed", "cancelled"]
+    },
+    "progress": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "strengths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "weaknesses": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "recommendation": { "type": "string" }
+      }
+    },
+    "error": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
+
